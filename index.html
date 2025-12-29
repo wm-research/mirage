@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Genesis: Multimodal Driving Scene Generation with Spatio-Temporal and Cross-Modal Consistency">
+  <meta name="keywords" content="Gaussians, Dynamic, Rendering, Splatting">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Genesis: Multimodal Driving Scene Generation with Spatio-Temporal and Cross-Modal Consistency</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/hust.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <!-- <h1 class="title is-1 publication-title">RAD: Training an End-to-End Driving Policy via Large-Scale</h1>
+          <h1 class="title is-1 publication-title"> 3DGS-based Reinforcement Learning</h1> -->
+          <h1 class="title is-1 publication-title" style="white-space: nowrap;">
+            Genesis: Multimodal Driving Scene <u>Gene</u>ration with
+          </h1>
+          <h1 class="title is-1 publication-title" style="white-space: nowrap;">
+            Spatio-Temporal and Cross-Modal Con<u>sis</u>tency
+          </h1>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a>Xiangyu Guo</a><sup>1,*,◇</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=NXIYuY0AAAAJ&hl=en">Zhanqian Wu</a><sup>2,*</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=Kh01ChoAAAAJ">Kaixin Xiong</a><sup>2,*</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=ZYwJrRMAAAAJ">Ziyang Xu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a>Lijun Zhou</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=ZVYrKpcAAAAJ&hl=zh-CN">Gangwei Xu</a><sup>1,◇</sup>,
+            </span>
+            <p></p>
+            <span class="author-block">
+              <a>Shaoqing Xu</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a>Haiyang Sun</a><sup>2,†</sup>,
+            </span>
+            <span class="author-block">
+              <a>Bing Wang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a>Guang Chen</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a>Hangjun Ye</a><sup>2</sup>,
+            </span>
+            <p></p>
+            <span class="author-block">
+              <a href="http://eic.hust.edu.cn/professor/liuwenyu/">Wenyu Liu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://xwcv.github.io/">Xinggang Wang</a><sup>1,✉</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Huazhong University of Science &amp; Technology</span>
+            <span class="author-block"><sup>2</sup>Xiaomi EV</span>
+            <p></p>
+            <span class="author-block"><sup>*</sup>Equal Contributions.</span>
+            <span class="author-block"><sup>◇</sup>Intern of Xiaomi EV.</span>
+            <span class="author-block"><sup>†</sup>Project Leader.</span>
+            <span class="author-block"><sup>✉</sup>Corresponding Author.</span>
+
+          <!-- </div> -->
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2506.07497"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/xiaomi-research/genesis"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present Genesis, a unified framework for joint generation of multi-view driving videos and LiDAR sequences with spatio-temporal and cross-modal consistency. Genesis employs a two-stage architecture that integrates a DiT-based video diffusion model with 3D-VAE encoding, and a BEV-aware LiDAR generator with NeRF-based rendering and adaptive sampling. Both modalities are directly coupled through a shared latent space, enabling coherent evolution across visual and geometric domains. To guide the generation with structured semantics, we introduce DataCrafter, a captioning module built on vision-language models that provides scene-level and instance-level supervision. Extensive experiments on the nuScenes benchmark demonstrate that Genesis achieves state-of-the-art performance across video and LiDAR metrics (FVD 16.95, FID 4.24, Chamfer 0.611), and benefits downstream tasks including segmentation and 3D detection, validating the semantic fidelity and practical utility of the generated data.<br><br><br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3" style="white-space: nowrap; display: inline-block;">Framework</h2>
+    <div class="content has-text-justified">
+      Genesis employs a unified pipeline where both video and LiDAR branches operate within a shared latent space. Vision and geometry are directly coupled through a novel cross-modal conditioning mechanism, enabling consistent temporal evolution and geometric alignment across modalities without relying on occupancy or voxel intermediates.
+    </div>
+    <img src="./static/images/framework.png">
+  </div>
+</section>
+
+ <!-- style="text-align: center;" -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3" style="white-space: nowrap; display: inline-block;">Joint Generation on nuScenes</h2>
+    
+    <!-- 修改：垂直布局，间距40px，内容居中 -->
+    <div style="display: flex; flex-direction: column; gap: 40px; margin-top: 20px; align-items: center;">
+    
+      <!-- 第一个视频块 -->
+      <div style="text-align: center; width: 100%;">
+        <h3 class="title is-5">Clip1</h3>
+        <video controls width="100%">
+          <source src="./static/videos/nuc_joint_lc1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <!-- 第二个视频块 -->
+      <div style="text-align: center; width: 100%;">
+        <h3 class="title is-5">Clip2</h3>
+        <video controls width="100%">
+          <source src="./static/videos/nuc_joint_lc2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3" style="white-space: nowrap;">Long-term Multi-View Video Generation on nuScenes</h2>
+    <div class="content has-text-justified">
+      Videos are generated conditioned on 5 initial frames from our nuScenes.
+    </div>
+    <video controls width="100%">
+      <source src="./static/videos/nuc_long1.mp4" type="video/mp4">
+    </video>
+    <video controls width="100%">
+      <source src="./static/videos/nuc_long2.mp4" type="video/mp4">
+    </video>
+    <video controls width="100%">
+      <source src="./static/videos/nuc_long3.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3" style="white-space: nowrap; display: inline-block;">Day & Night Generation on nuScenes</h2>
+    <video controls width="100%">
+      <source src="./static/videos/nuc_day_night.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop" >
+    <h2 class="title is-3" style="white-space: nowrap; display: inline-block;">Trajectory-Controlled Generation on nuScenes</h2>
+    <video controls width="100%">
+      <source src="./static/videos/nuc_shift1.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3" style="white-space: nowrap; display: inline-block;">Joint Generation on Private Data</h2>
+    <!-- 修改：垂直布局，间距40px，内容居中 -->
+    <div style="display: flex; flex-direction: column; gap: 40px; margin-top: 20px; align-items: center;">
+    
+      <!-- 第一个视频块 -->
+      <div style="text-align: center; width: 100%;">
+        <!-- <h3 class="title is-4">Clip1</h3> -->
+        <video controls width="100%">
+          <source src="./static/videos/private_uni1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <!-- 第二个视频块 -->
+      <div style="text-align: center; width: 100%;">
+        <!-- <h3 class="title is-4">Clip2</h3> -->
+        <video controls width="100%">
+          <source src="./static/videos/private_uni2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3" style="white-space: nowrap;">Long-term Generation(40s) on Private Data</h2>
+    <div class="content has-text-justified">
+      Videos are generated conditioned on 17 initial frames from our Priavte Data.
+    </div>
+    <video controls width="100%">
+      <source src="./static/videos/private_long1.mp4" type="video/mp4">
+    </video>
+    <video controls width="100%">
+      <source src="./static/videos/private_long2.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3" style="white-space: nowrap; display: inline-block;">Weather-Controllable Generation on Private Data</h2>
+    <video controls width="100%">
+      <source src="./static/videos/private_weather_shift.mp4" type="video/mp4">
+    </video>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Video Generation Results</h2>
+    <div class="content has-text-justified">
+      Video Generation Comparison on nuScenes validation set, where green and blue represent the best and the second best values.
+    </div>
+    <img src="./static/images/video.png">
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">LiDAR Generation Results</h2>
+    <div class="content has-text-justified">
+      Lidar Generation Comparison on nuScenes validation set, where green and blue represent the best and the second best values. ‘gt_img” and gen_img” indicate using ground-truth or generated images as BEV condition input, respectively.
+    </div>
+    <img src="./static/images/lidar.png">
+  </div>
+</section>
+
+<style>
+  .container.fixed-width {
+    max-width: 1000px; 
+    margin: 0 auto;
+  }
+  .title-container {
+    padding-left: 0px;  
+  }
+  .columns {
+    margin-top: 20px; 
+  }
+</style>
+
+<head>
+  <style>
+    .video-container-wrapper {
+      background-color: #f0f0f0; 
+      padding: 20px; 
+      border-radius: 5px; 
+    }
+
+    .video-container-wrapper video {
+      width: 100%; 
+      border-radius: 8px; 
+    }
+
+    .columns {
+      margin-bottom: 20px; 
+    }
+
+    .background-container {
+      background-color: #f0f0f0; 
+      padding: 30px; 
+      border-radius: 15px; 
+    }
+  </style>
+</head>
+
+
+
+<div style="margin-top: 30px;"></div>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">BibTeX</h2>
+    <pre><code>@article{guo2025genesis,
+      title={Genesis: Multimodal Driving Scene Generation with Spatio-Temporal and Cross-Modal Consistency},
+      author={Guo, Xiangyu and Wu, Zhanqian and Xiong, Kaixin and Xu, Ziyang and Zhou, Lijun and Xu, Gangwei and Xu, Shaoqing and Sun, Haiyang and Wang, Bing and Chen, Guang and others},
+      journal={arXiv preprint arXiv:2506.07497},
+      year={2025}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <!-- <a class="icon-link"
+         href="https://arxiv.org/abs/2310.08528">
+        <i class="fas fa-file-pdf"></i>
+      </a>  -->
+      <a class="icon-link" href="https://github.com/hustvl" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            The source code is borrowed from <a
+              href=""></a>,
+              we thank the authors for sharing the templates.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
