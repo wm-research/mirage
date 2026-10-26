@@ -10,7 +10,7 @@ Shuyun Wang<sup>1</sup>,  Haiyang Sun<sup>2†</sup>,  Bing Wang<sup>2</sup>, Ha
 
 (†) Project leader. (✉)Corresponding Author.
 
-<a href=""><img src='https://img.shields.io/badge/arXiv-Mirage-red' alt='Paper PDF'></a>
+<a href="https://arxiv.org/abs/2512.24227"><img src='https://img.shields.io/badge/arXiv-Mirage-red' alt='Paper PDF'></a>
 <a href="https://github.com/wm-research/mirage"><img src='https://img.shields.io/badge/code-Mirage-green' alt='code'></a>
 </div>
 
