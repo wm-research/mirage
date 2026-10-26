@@ -55,10 +55,13 @@ supervision. Extensive experiments demonstrate that Mirage achieves high realism
 If you find Mirage is useful in your research or applications, please consider giving us a star 🌟 and citing it by the following BibTeX entry.
 
 ```bibtex
-@article{guo2025genesis,
+@article{wang2025mirage,
   title={Mirage: One-Step Video Diffusion for Photorealistic and Coherent Asset Editing in Driving Scenes},
-  author={Shuyun Wang, Haiyang Sun, Bing Wang, Hangjun Ye, Xin Yu},
-  journal={},
+  author={Wang, Shuyun and Sun, Haiyang and Wang, Bing and Ye, Hangjun and Yu, Xin},
+  journal={arXiv preprint arXiv:2512.24227},
   year={2025}
 }
 ```
+
+## Acknowledgements
+This research was also supported by the NVIDIA Academic Grant Program.
