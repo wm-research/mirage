@@ -3,7 +3,7 @@
 <div align="center">
 <h3>Mirage: One-Step Video Diffusion for Photorealistic and Coherent Asset Editing in Driving Scenes</h3>
 
-Shuyun Wang<sup>1</sup>,  Haiyang Sun<sup>2†</sup>,  Bing Wang<sup>2</sup>, Hangjun Ye<sup>2,✉</sup>, Xin Yu<sup>1,✉</sup>
+Shuyun Wang<sup>1</sup>,  Haiyang Sun<sup>2†</sup>,  Bing Wang<sup>2</sup>, Hangjun Ye<sup>2✉</sup>, Xin Yu<sup>1✉</sup>
 
 <sup>1</sup>  The University of Queensland
 <sup>2</sup>  Xiaomi EV 
